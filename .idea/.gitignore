@@ -1,0 +1,39 @@
+# Build
+/build/
+/target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependências
+*.jar
+*.war
+
+# Banco em memória ou local
+*.h2.db
+*.mv.db
+*.sqlite
+
+# Arquivos temporários
+*.class
+*.swp
+*.tmp
+*.bak
+
+# Credenciais (caso use .env ou config.local)
+.env
+*.local
+
+# JSON de produção (caso queira manter só no ambiente)
+src/main/resources/documentos.json

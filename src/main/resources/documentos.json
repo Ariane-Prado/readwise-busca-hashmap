@@ -1,0 +1,77 @@
+[
+  {
+    "chave": "inteligencia-artificial",
+    "titulo": "O Futuro da IA",
+    "descricao": "Exploração sobre o impacto da IA na sociedade."
+  },
+  {
+    "chave": "programacao",
+    "titulo": "Lógica de Programação",
+    "descricao": "Conceitos básicos para iniciantes."
+  },
+  {
+    "chave": "literatura",
+    "titulo": "Literatura Brasileira",
+    "descricao": "Análise de obras clássicas."
+  },
+  {
+    "chave": "negocios",
+    "titulo": "Empreendedorismo",
+    "descricao": "Como iniciar uma startup do zero."
+  },
+  {
+    "chave": "historia",
+    "titulo": "História do Brasil",
+    "descricao": "Do período colonial à república."
+  },
+  {
+    "chave": "economia",
+    "titulo": "Fundamentos de Economia",
+    "descricao": "Oferta, demanda e mercado."
+  },
+  {
+    "chave": "psicologia",
+    "titulo": "Comportamento Humano",
+    "descricao": "Entenda a mente através da psicologia moderna."
+  },
+  {
+    "chave": "biologia",
+    "titulo": "Genética e Evolução",
+    "descricao": "Conceitos de hereditariedade e seleção natural."
+  },
+  {
+    "chave": "tecnologia",
+    "titulo": "Inovações Disruptivas",
+    "descricao": "Como a tecnologia está moldando o futuro."
+  },
+  {
+    "chave": "filosofia",
+    "titulo": "Filosofia Moderna",
+    "descricao": "De Descartes à ética contemporânea."
+  },
+  {
+    "chave": "educacao",
+    "titulo": "Métodos de Ensino Ativos",
+    "descricao": "Gamificação, sala invertida e aprendizagem baseada em projetos."
+  },
+  {
+    "chave": "marketing",
+    "titulo": "Marketing Digital",
+    "descricao": "SEO, redes sociais e estratégias online."
+  },
+  {
+    "chave": "sociologia",
+    "titulo": "Estrutura Social",
+    "descricao": "Estudos sobre classes, cultura e poder."
+  },
+  {
+    "chave": "matematica",
+    "titulo": "Álgebra Essencial",
+    "descricao": "Equações, funções e gráficos para o ensino médio."
+  },
+  {
+    "chave": "ciencia-dados",
+    "titulo": "Introdução à Ciência de Dados",
+    "descricao": "Análise exploratória, estatísticas e visualizações."
+  }
+]

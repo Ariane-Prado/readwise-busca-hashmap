@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ReadWise - Buscar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #eef4fa, #e3f3f1);
+      margin: 0;
+    }
+    .navbar {
+      background-color: #ffffff;
+      padding: 10px 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .tag-btn {
+      border: none;
+      background-color: #f1f3f5;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 4px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="collapse navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-house"></i> Home</a></li>
+      <li class="nav-item"><a class="nav-link active" href="/buscar"><i class="bi bi-search"></i> Buscar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <h2 class="fw-bold mb-2">Buscar Documentos</h2>
+  <p class="text-muted">Encontre seus arquivos por título, conteúdo ou tags</p>
+
+  <div class="bg-white p-4 rounded shadow-sm mb-4">
+    <form method="get" action="/buscar">
+      <div class="row g-2 align-items-center">
+        <div class="col-md-10">
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" placeholder="Digite sua busca..." name="termo">
+          </div>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-primary w-100" type="submit">Buscar</button>
+        </div>
+        <div class="col-md-1">
+          <a href="/buscar" class="btn btn-outline-secondary w-100">Limpar</a>
+        </div>
+      </div>
+    </form>
+
+    <div th:if="${tagsBuscadas != null}">
+      <small class="text-muted"><i class="bi bi-funnel"></i> Filtrar por tags:</small><br>
+      <button class="tag-btn"
+              th:each="tag : ${tagsBuscadas}"
+              th:text="${tag}"
+              th:attr="data-termo=${tag}">
+      </button>
+    </div>
+  </div>
+
+  <div th:if="${resultados != null and !resultados.isEmpty()}">
+    <p th:text="${resultadoTexto}"></p>
+    <div class="row">
+      <div class="col-md-4 mb-3" th:each="doc : ${resultados}">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title" th:text="${doc.titulo}"></h5>
+            <p class="card-text" th:text="${doc.descricao}"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div th:if="${resultados != null and resultados.isEmpty()}">
+    <p class="text-muted">Nenhum resultado encontrado.</p>
+  </div>
+
+  <!-- Recomendações com base nas buscas anteriores -->
+  <div th:if="${sugestoes != null and !sugestoes.isEmpty()}">
+    <h4 class="mt-5"><i class="bi bi-stars"></i> Você também pode gostar de:</h4>
+    <div class="row">
+      <div class="col-md-4 mb-3" th:each="doc : ${sugestoes}">
+        <div class="card border-info">
+          <div class="card-body">
+            <h5 class="card-title" th:text="${doc.titulo}"></h5>
+            <p class="card-text" th:text="${doc.descricao}"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.tag-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const termo = btn.getAttribute('data-termo');
+      window.location.href = `/buscar?termo=${encodeURIComponent(termo)}`;
+    });
+  });
+</script>
+</body>
+</html>
