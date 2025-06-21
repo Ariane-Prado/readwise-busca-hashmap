@@ -1,4 +1,4 @@
-# ReadWise - Sistema de Busca com HashMap
+# Sistema de Busca com HashMap
 
 Este projeto foi desenvolvido como atividade da disciplina de **Estrutura de Dados**. A proposta é aplicar estruturas como `HashMap` em um sistema de busca simples por documentos, utilizando Java com Spring Boot.
 
